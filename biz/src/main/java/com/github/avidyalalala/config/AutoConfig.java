@@ -1,6 +1,4 @@
 package com.github.avidyalalala.config;
-
-
 import lombok.Data;
 
 @Data
