@@ -1,7 +1,6 @@
-package com.github.avidyalalala.cron;
+package com.github.avidyalalala.ftp;
 
 import com.github.avidyalalala.config.AutoConfig;
-import com.github.avidyalalala.utils.FtpUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;

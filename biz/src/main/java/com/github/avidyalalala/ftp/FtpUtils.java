@@ -1,4 +1,4 @@
-package com.github.avidyalalala.utils;
+package com.github.avidyalalala.ftp;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.net.ftp.FTP;

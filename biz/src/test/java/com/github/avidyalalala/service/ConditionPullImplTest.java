@@ -1,6 +1,6 @@
 package com.github.avidyalalala.service;
 
-import com.taobao.mtop.common.Result;
+import com.github.avidyalalala.common.Result;
 import com.github.avidyalalala.config.AutoConfig;
 import com.github.avidyalalala.dal.dao.TrafficInfoDAO;
 import junit.framework.Assert;

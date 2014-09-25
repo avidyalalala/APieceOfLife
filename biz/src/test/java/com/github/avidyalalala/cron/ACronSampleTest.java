@@ -3,6 +3,7 @@ package com.github.avidyalalala.cron;
 import com.github.avidyalalala.config.AutoConfig;
 import com.github.avidyalalala.dal.dao.TrafficInfoDAO;
 import com.github.avidyalalala.pojo.TrafficInfo;
+import com.github.avidyalalala.ftp.FtpWrapper;
 import junit.framework.Assert;
 import org.apache.commons.io.FileUtils;
 import org.junit.Test;
