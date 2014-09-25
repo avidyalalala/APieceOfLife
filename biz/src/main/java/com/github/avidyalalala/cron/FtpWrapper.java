@@ -16,22 +16,19 @@ import java.io.File;
  * Time: 下午5:30
  * To change this template use File | Settings | File Templates.
  */
-@Component("aliTongXinSupport")
-public class AliTongXinSupport {
+@Component("ftpWrapper")
+public class FtpWrapper {
 
     private static final Logger log = LoggerFactory.getLogger("taskLogger");
-
-    @Resource
-    AutoConfig autoConfig;
 
     public void upLoadToFtp(File file){
 
         String fileName=file.getName();
 
-        String server=autoConfig.getAliTongXinFtpServer();
-        String userName=autoConfig.getAliTongXinFtpUserName();
-        String password=autoConfig.getAliTongXinFtpPassWord();
-        String directory=autoConfig.getAliTongXinFtpDirectory();
+        String server="";
+        String userName="";
+        String password="";
+        String directory="";
 
         log.info("start to upload File "+fileName+" to FTP "+ server);
 

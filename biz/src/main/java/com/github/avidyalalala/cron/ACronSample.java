@@ -36,10 +36,13 @@ public class ACronSample {
     public ACronSample(){}
 
     //@Scheduled(cron = "0 */15 * * * ?")
-    @Scheduled(cron = "0 7 */1 * * ?")
-    public void syncToAliTongxin() throws UnknownHostException {
+    @Scheduled(cron = "0 7 7 */1 * ?")
+    public void createFileEveryMorning() throws UnknownHostException {
         String hostName = InetAddress.getLocalHost().getHostName();
         log.info("********** this cronHostName : {}",hostName);
+        if(hostName=="hehe"){
+            selectAndWriteToFile(new Date());
+        }
 
     }
 
