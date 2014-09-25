@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="logback.xsd">
+
+    <root level="${log.level}">
+        <appender-ref ref="console" />
+        <appender-ref ref="EXCEPTION_LOG" />
+        <appender-ref ref="rollingAppender" />
+        <appender-ref ref="JmonitorAppender"/>
+    </root>
+
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!--<appender name="EXCEPTION_LOG" class="com.alibaba.dragoon.patrol.logback.LogbackAppender">-->
+        <!--<param name="Threshold" value="ERROR"/>-->
+    <!--</appender>-->
+
+    <appender name="rollingAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>/home/admin/logs/tp-platform.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>/home/admin/logs/tp-platform.%d{yyyy-MM-dd}.log</fileNamePattern>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!--mtop LOG-->
+    <appender name="mtopApiAgentAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>/home/admin/logs/mtopAgent.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>/home/admin/logs/mtopAgent.%d{yyyy-MM-dd}.log</fileNamePattern>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+        <encoding>GBK</encoding>
+    </appender>
+    <logger name="com.taobao.mtop.api" additivity="false" level="${log.level}">
+        <appender-ref ref="mtopApiAgentAppender"/>
+    </logger>
+    <logger name="mtopDynamicHsfLog" additivity="false" level="${log.level}">
+        <appender-ref ref="mtopApiAgentAppender"/>
+    </logger>
+    <!--end of mtop LOG-->
+
+
+    <!--mtop service LOG(self-defined)-->
+    <appender name="netAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>/home/admin/logs/net.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>/home/admin/logs/net.%d{yyyy-MM-dd}.log</fileNamePattern>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <logger name="netLogger" level="INFO" additivity="false">
+        <appender-ref ref="netAppender"/>
+    </logger>
+
+
+    <!--task LOG-->
+    <appender name="taskAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>/home/admin/logs/task.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>/home/admin/logs/task.%d{yyyy-MM-dd}.log</fileNamePattern>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <logger name="taskLogger" level="INFO" additivity="false">
+        <appender-ref ref="taskAppender"/>
+    </logger>
+
+    <!-- alimonitor -->
+    <appender name="JmonitorAppender" class="com.alibaba.alimonitor.jmonitor.plugin.logback.JMonitorLogbackAppender">
+    </appender>
+
+    <!-- Diamond 屏蔽 -->
+    <logger name="com.taobao.diamond" level="WARN">
+        <appender-ref ref="ROOT"/>
+    </logger>
+
+    <logger name="com.alibaba.dragoon" level="WARN">
+        <appender-ref ref="ROOT"/>
+    </logger>
+
+    <logger name="com.taobao.tair" level="WARN">
+        <!--<appender-ref ref="ROOT"/>-->
+    </logger>
+
+    <logger name="org.springframework" level="INFO">
+        <appender-ref ref="ROOT"/>
+    </logger>
+
+    <logger name="com.taobao.tddl" level="ERROR">
+        <appender-ref ref="ROOT"/>
+    </logger>
+    <logger name="org.apache" level="ERROR">
+        <appender-ref ref="ROOT"/>
+    </logger>
+    <logger name="TDDL_SQL_LOG" level="ERROR">
+        <appender-ref ref="ROOT"/>
+    </logger>
+
+
+</configuration>
