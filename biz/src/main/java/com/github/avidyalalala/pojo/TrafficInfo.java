@@ -54,6 +54,8 @@ public class TrafficInfo implements Cloneable {
     //Json 串专用属性
     private String START_TIME;
     private String BILL_TIME;
+    @Deprecated
+    private String __test;
 
     public static void main(String[] args) {
 

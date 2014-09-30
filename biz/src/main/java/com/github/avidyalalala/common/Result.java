@@ -11,8 +11,10 @@ import lombok.Data;
  */
 @Data
 public class Result<T> {
+
     private T model;
     private boolean success;
     private String msgCode;
     private String msgInfo;
+
 }
