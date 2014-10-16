@@ -3,17 +3,20 @@ package com.github.avidyalalala.asm;
 /**
  * Created with IntelliJ IDEA.
  * User: lina.hou
- * Date: 14-9-26
- * Time: 上午10:48
+ * Date: 14-10-16
+ * Time: 下午3:03
  * To change this template use File | Settings | File Templates.
  */
-
-public class Person {
+public class Person
+{
     private String name;
 
-    public void sayName() {
-        System.out.println(name);
+    public void sayName()
+    {
+        System.out.println(this.name);
+    }
+
+    public static void main(String[] args) {
+        new Person().sayName();
     }
 }
-
-

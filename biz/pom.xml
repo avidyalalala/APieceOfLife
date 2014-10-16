@@ -36,6 +36,11 @@
             <artifactId>httpclient</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+        </dependency>
+
         <!-- LOGGING start -->
         <dependency>
             <groupId>commons-logging</groupId>

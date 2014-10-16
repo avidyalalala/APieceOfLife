@@ -40,9 +40,9 @@ public class GeneralClassAdapter extends ClassAdapter {
         public void visitCode() {
             // 记载隐含的this对象，这是每个JAVA方法都有的
             mv.visitVarInsn(Opcodes.ALOAD, 0);
-            // 从常量池中加载“zhangzhuo”字符到栈顶
-            mv.visitLdcInsn("zhangzhuo");
-            // 将栈顶的"zhangzhuo"赋值给name属性
+            // 从常量池中加载“lalala”字符到栈顶
+            mv.visitLdcInsn("lalala");
+            // 将栈顶的"lalala"赋值给name属性
             mv.visitFieldInsn(Opcodes.PUTFIELD,
                     Type.getInternalName(Person.class), "name",
                     Type.getDescriptor(String.class));

@@ -14,7 +14,7 @@ import java.io.FileOutputStream;
  * Time: 上午10:37
  * To change this template use File | Settings | File Templates.
  */
-public class GenerateNewPerson {
+public class Door {
 
     public static void main(String[] args) throws Exception {
         // 使用全限定名，创建一个ClassReader对象
@@ -31,7 +31,7 @@ public class GenerateNewPerson {
 
         // 将这个类输出到原先的类文件目录下，这时原先的类文件已经被修改
         File file = new File(
-                "target/classes/com/github/avidyalalala/asm/Person.class");
+                "biz/target/classes/com/github/avidyalalala/asm/Person.class");
         FileOutputStream stream = new FileOutputStream(file);
         stream.write(classFile);
         stream.close();
