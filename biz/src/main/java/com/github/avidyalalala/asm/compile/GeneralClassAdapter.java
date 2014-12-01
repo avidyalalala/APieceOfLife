@@ -1,4 +1,4 @@
-package com.github.avidyalalala.asm;
+package com.github.avidyalalala.asm.compile;
 
 import org.objectweb.asm.*;
 
@@ -38,6 +38,8 @@ public class GeneralClassAdapter extends ClassAdapter {
         // 在源方法前去修改方法内容,这部分的修改将加载源方法的字节码之前
         @Override
         public void visitCode() {
+            //super 的 visitCode()
+            super.visitCode();
             // 记载隐含的this对象，这是每个JAVA方法都有的
             mv.visitVarInsn(Opcodes.ALOAD, 0);
             // 从常量池中加载“lalala”字符到栈顶

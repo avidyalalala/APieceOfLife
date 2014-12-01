@@ -1,4 +1,4 @@
-package com.github.avidyalalala.asm;
+package com.github.avidyalalala.asm.compile;
 
 /**
  * Created with IntelliJ IDEA.
